@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Daily Quote</title>
+    </head>
+    <body>
+        <h2>Quote of the Day</h2>
+        <h3 id="dayname"></h3>
+        <p id="quote"></p>
+
+        <script>
+            const quotes = [
+                "Don’t judge too early.",
+                "Don't fall in love with success. Fall in love with the habits that bring success.",
+                "Difficulties don’t come to break you, but to reveal your strength. Just as stars can only be seen at night, your courage appears when challenges arrive.",
+                "Dress well, even when you are alone. Treat yourself with respect.",
+                "\"We are always getting ready to live, but never living\" - Ralph Waldo Emerson",
+                "Sleep is the best meditation. - Dalai Lama",
+                "Stick to the plan, not your mood."
+            ];
+
+            const today = new Date().getDay(); // 0 = Sunday, 6 = Saturday
+            document.getElementById("quote").textContent = quotes[today];
+
+            const today1 = new Date();
+            const dayname = today1.toLocaleDateString('en-In', {weekday:"long"});
+            document.getElementById("dayname").textContent = dayname;
+        </script>
+    </body>
+</html>

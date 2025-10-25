@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Current Time and Date</title>
+    </head>
+    <body>
+        <p id="datetime"></p>
+        <img src="001SC.png" id="sc" style="display:none">
+        <img src="001Explanation.png" id="ex" style="display:none">
+        <button type="button"
+        onclick="document.getElementById('sc').style.display='block'">Click Me to Display Source Code</button>
+        <button type="button"
+        onclick="document.getElementById('ex').style.display='block'">Click Me to Display Code Explanation</button>
+
+
+        <script>
+            const now = new Date();
+            document.getElementById("datetime").textContent = now;
+        </script>
+    </body>
+</html>
