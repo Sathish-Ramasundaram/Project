@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Alphabet Dictionary</title>
+  </head>
+  <body>
+    <h2>Type a letter (A-Z)</h2>
+    <input type="text" id="letterInput" maxlength="1">
+    <button onclick="showPhrase()">Show</button>
+    <p id="output"></p>
+
+    <script>
+      const phrases = {
+        a: "A for Apple",
+        b: "B for Ball",
+        c: "C for Cat",
+        d: "D for Dog",
+        e: "E for Elephant",
+        f: "F for Fish",
+        g: "G for Goat",
+        h: "H for Hat",
+        i: "I for Ice cream",
+        j: "J for Jug",
+        k: "K for Kite",
+        l: "L for Lion",
+        m: "M for Monkey",
+        n: "N for Nest",
+        o: "O for Orange",
+        p: "P for Parrot",
+        q: "Q for Queen",
+        r: "R for Rabbit",
+        s: "S for Sun",
+        t: "T for Tiger",
+        u: "U for Umbrella",
+        v: "V for Van",
+        w: "W for Watch",
+        x: "X for Xylophone",
+        y: "Y for Yak",
+        z: "Z for Zebra"
+      };
+
+      function showPhrase() {
+        const input = document.getElementById("letterInput").value.toLowerCase();
+        const result = phrases[input];
+        document.getElementById("output").textContent = result ? result : "Please enter a valid letter (A-Z).";
+      }
+    </script>
+  </body>
+</html>

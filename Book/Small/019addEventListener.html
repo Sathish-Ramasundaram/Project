@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <p id="message">Original Text</p>
+    <button id="changeBtn">Click Me</button>
+
+    <script>
+        const button = document.getElementById("changeBtn");
+        const message = document.getElementById("message");
+
+        button.addEventListener("click", function() {
+            message.textContent = "Text changed after click";
+        });
+    </script>
+</body>
+</html>

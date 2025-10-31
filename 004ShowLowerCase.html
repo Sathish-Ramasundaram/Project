@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2>Show Text in Lowercase</h2>
+        <input type="text" id="userInput">
+        <button type="button" onclick="showLower()">Convert</button>
+        <p id="output"></p>
+
+        <script>
+            function showLower() {
+                const text = document.getElementById("userInput").value;
+                const lower = text.toLowerCase();
+                document.getElementById("output").textContent = lower;
+            }
+        </script>
+    </body>
+</html>

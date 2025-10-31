@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <button id="loadPage">Load About Section</button>
+    <div id="content">Content will appear here...</div>
+
+    <script>
+        const button = document.getElementById("loadPage");
+        const content = document.getElementById("content");
+
+        button.addEventListener("click", () => {
+            fetch("013box.html")
+            .then(response => response.text())
+            .then(data => {
+                content.innerHTML = data;
+            })
+            .catch(error => {
+                content.textContent = "Failed to load content.";
+                console.error(error);
+            });
+        });
+    </script>
+</body>
+</html>

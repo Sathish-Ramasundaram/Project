@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Echo Input</title>
+    </head>
+    <body>
+        <h2>Echo Input: Show Exactly What User Typed</h2>
+        <input type="text" id="userInput">
+        <button onClick="showText()">Show</button>
+        <p id="output"></p>
+
+        <script>
+            function showText() {
+                const text = document.getElementById("userInput").value;
+                document.getElementById("output").textContent = text;
+            }
+        </script>
+    </body>
+</html>
