@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/Project/007SPA/', // matches your GitHub repo and subfolder
+  base: '/Project/007SPA/' // matches your GitHub repo and subfolder
 });
