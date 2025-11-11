@@ -1,0 +1,16 @@
+body {
+    background: linear-gradient(to bottom,
+    rgba(99, 201, 204, 0.9),   /* soft pink with opacity */
+    rgba(117, 173, 175, 0.9),   /* soft blue with opacity */
+    rgba(166, 190, 190, 0.9));    /* soft green with opacity */
+    min-height: 100vh;
+    font-family: sans-serif, Arial ;
+    text-align: center;
+}
+
+div {
+    border-radius: 8px;
+    padding: 20px;
+    margin: 200px;
+    border: 2px solid black; /* shorthand: width + style + color */
+}

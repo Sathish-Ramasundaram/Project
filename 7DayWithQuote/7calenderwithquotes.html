@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Day With Quotes</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div>
+            <h2 id="dayname"></h2>
+            <h1 id="date"></h1>
+            <p id="quote"></p>
+        </div>
+
+
+        <script>
+            const quotes = [
+                "Don’t judge too early.",
+                "Don't fall in love with success. Fall in love with the habits that bring success.",
+                "Difficulties don’t come to break you, but to reveal your strength. Just as stars can only be seen at night, your courage appears when challenges arrive.",
+                "Dress well, even when you are alone. Treat yourself with respect.",
+                "\"We are always getting ready to live, but never living\" - Ralph Waldo Emerson",
+                "Sleep is the best meditation. - Dalai Lama",
+                "Stick to the plan, not your mood."
+            ];
+
+            const today = new Date(); 
+            const dayno = today.getDay(); // 0 = Sunday, 6 = Saturday
+            document.getElementById("quote").innerHTML = "<b>Quote of the day: </b>" +quotes[dayno];
+
+            const dayname = today.toLocaleDateString('en-In', {weekday:"long"}); // To get DayName = Sunday, Monday, Tuesday
+            document.getElementById("dayname").textContent = dayname;
+
+            // Extract parts
+            const day = today.getDate();                      // 1–31
+            const month = today.toLocaleString('default', { month: 'long' }); // Full month name
+            const year = today.getFullYear();           // e.g. 2025
+            // Build custom format: Day Month Year
+            document.getElementById("date").textContent = day + " " + month + " " + year;
+        </script>
+    </body>
+</html>
