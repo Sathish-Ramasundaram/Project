@@ -1,6 +1,9 @@
 body {
   height: 100vh;
   margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: linear-gradient(to top left, #e69e9e, #71a8eb, #74f0cf, #e4ce9f);
   background-size: 400% 400%;
   animation: gradientMove 15s ease infinite;
@@ -19,7 +22,29 @@ div {
     justify-content: center;
     align-items: center;
     border-radius: 8px;
-    padding: 20px;
-    margin: 200px;
+    padding: 2rem;
+    margin: 13%;
     border: 2px solid black; /* shorthand: width + style + color */
+    font-size: 1.2rem;
+    max-width: 600px;
+}
+
+#date {
+  margin-top: -12px;
+}
+
+@media (max-width: 768px) {   /* tablets */
+  div {
+    margin: 3%;
+    padding: 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {   /* mobile phones */
+  div {
+    margin: 2%;
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
 }
