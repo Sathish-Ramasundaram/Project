@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Dictionary</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 600px; margin: 30px auto; }
+    form { margin-bottom: 20px; display: flex; gap: 10px; }
+    input[type="text"] { flex: 1; padding: 8px; }
+    button { padding: 8px 16px; }
+    ul { list-style: none; padding: 0; }
+    li { padding: 6px 0; border-bottom: 1px solid #eee; }
+    h1 { margin-bottom: 12px; }
+  </style>
+</head>
+<body>
+  <h1>📘 Mini Dictionary</h1>
+
+  <form action="/" method="POST">
+    <input type="text" name="content" placeholder="Type a word..." required>
+    <button type="submit">Submit</button>
+  </form>
+
+  <h3>Stored entries (A → Z)</h3>
+  <ul>
+    {% for item in entries %}
+      <li>{{ item }}</li>
+    {% endfor %}
+  </ul>
+</body>
+</html>
