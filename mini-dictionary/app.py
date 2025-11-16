@@ -4,21 +4,20 @@ import psycopg2
 
 app = Flask(__name__)
 
-# Database connection details
-DB_URL = os.getenv("DATABASE_URL")  # Render-managed Postgres
-DB_NAME = "bookdb"
-DB_USER = "postgres"
-DB_PASSWORD = "255202"   # <-- replace with your postgres password
-DB_HOST = "localhost"
-DB_PORT = "5432"
+# Render will inject DATABASE_URL into environment variables
+DB_URL = os.getenv("DATABASE_URL")
 
 def get_conn():
+    if DB_URL:
+        # Use Render's managed PostgreSQL (requires SSL)
+        return psycopg2.connect(DB_URL, sslmode="require")
+    # Fallback for local development
     return psycopg2.connect(
-        dbname=DB_NAME,
-        user=DB_USER,
-        password=DB_PASSWORD,
-        host=DB_HOST,
-        port=DB_PORT
+        dbname="bookdb",
+        user="postgres",
+        password="255202",  # <-- replace with your local postgres password
+        host="localhost",
+        port="5432"
     )
 
 @app.route('/', methods=['GET', 'POST'])
